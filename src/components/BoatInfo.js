@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col, Image, Label } from 'react-bootstrap';
 
 class BoatInfo extends React.Component {
 
@@ -15,14 +16,33 @@ class BoatInfo extends React.Component {
     } 
 
     render() {
-        console
         return (
-            <div>
-                <p>
-                    <strong>{this.props.agent}</strong> - {this.props.boat} ({this.props.currency + ' ' + this.convertCurrency(this.props.price)})
-                </p>
-                <p>{this.props.fetch_date}</p>
-            </div>
+            <Row>
+                <Col sm={2}>
+                    <Image className="pull-left" src={this.props._boat_photo} thumbnail responsive />
+                </Col>
+                <Col sm={10} style={{paddingLeft: 0}}>
+                    <Col sm={6} style={{paddingLeft: 0}}>
+                        <strong>{this.props.boat}</strong>
+                        <br/>
+                        Agent: {this.props.agent}
+                        <br/>
+                        Depart Time: {this.props.depart_time}
+                        <br/>
+                        Arrive Time: {this.props.arrive_time}
+                        <br/>
+                        Website: <a href={this.props._agent_site}>{this.props._agent_site}</a>
+                    </Col>
+                    <Col sm={6}>
+                        <h3 style={{marginTop: 0}}>
+                            <Label bsStyle="success" className="pull-right">
+                                {this.props.currency + ' ' + this.convertCurrency(this.props.price)}
+                            </Label>
+                        </h3>
+                    </Col>
+                </Col>
+                
+            </Row>
         );
     }
 }
