@@ -19,7 +19,7 @@ class BoatInfo extends React.Component {
         return (
             <div>
                 <p>
-                    <strong>{this.props.agent}</strong> - {this.props.boat} (Rp. {this.convertCurrency(this.props.price)})
+                    <strong>{this.props.agent}</strong> - {this.props.boat} ({this.props.currency + ' ' + this.convertCurrency(this.props.price)})
                 </p>
                 <p>{this.props.fetch_date}</p>
             </div>
