@@ -18,11 +18,11 @@ class BoatInfo extends React.Component {
     render() {
         return (
             <Row>
-                <Col sm={2}>
+                <Col xs={12} sm={2} style={{paddingLeft: 0}}>
                     <Image className="pull-left" src={this.props._boat_photo} thumbnail responsive />
                 </Col>
-                <Col sm={10} style={{paddingLeft: 0}}>
-                    <Col sm={6} style={{paddingLeft: 0}}>
+                <Col xs={12} sm={10} style={{paddingLeft: 0}}>
+                    <Col xs={12} sm={6} style={{paddingLeft: 0}}>
                         <strong>{this.props.boat}</strong>
                         <br/>
                         Agent: {this.props.agent}
@@ -33,7 +33,7 @@ class BoatInfo extends React.Component {
                         <br/>
                         Website: <a href={this.props._agent_site}>{this.props._agent_site}</a>
                     </Col>
-                    <Col sm={6}>
+                    <Col xs={12} sm={6}>
                         <h3 style={{marginTop: 0}}>
                             <Label bsStyle="success" className="pull-right">
                                 {this.props.currency + ' ' + this.convertCurrency(this.props.price)}
